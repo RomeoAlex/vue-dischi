@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Header />
+    <DiskContainer />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import Header from "./components/Header.vue";
+import DiskContainer from "./components/DiskContainer.vue";
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Header, DiskContainer ,
   },
 };
 </script>
 
 <style lang="scss">
+@import url('./style/general.scss');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width:100%;
+  margin: auto;
+  background-color: #1e2d3b;
+  min-height: 100vh;
 }
 </style>
