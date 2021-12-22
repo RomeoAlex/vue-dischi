@@ -1,24 +1,16 @@
 <template>
     <div class="album-wrapper">
-        <Album />
-        <Album />
-        <Album />
-        <Album />
-        <Album />
-        <Album />
-        <Album />
-        <Album />
-        <Album />
-        <Album />
+        <Album v-for="album  in albums " :key="album" :details="album "/>
+        
     </div>
 </template>
 <script>
 import axios from 'axios';
-import Album from "./Album.vue";
+import Album from "./SingleAlbum";
 export default {
     name: 'DiskContainer',
     components: {
-        Album
+        SingleAlbum
         },
     data: function(){
         return {
@@ -27,8 +19,7 @@ export default {
     },
     created: function() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result) => {
-        
-            console.log(result)
+        this.albums = result.data.response;
         });
     }
 }

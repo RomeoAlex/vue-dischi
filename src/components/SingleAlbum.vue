@@ -1,21 +1,24 @@
 <template>
     <div class="album-container">
-        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
+        <img :src="{details.poster}" :alt="details.title">
         <div class="album-title">
-                Titolo album
+                {{details.title}}
             </div>
             <div class="author">
-                Autore 
+                {{details.author}}
             </div>
             <div class="date">
-                e data
+                {{details.year}}
             </div>
     </div>
     
 </template>
 <script>
 export default {
-    name:'Album.vue'
+    name:'SingleAlbum',
+    props: {
+        details: Object
+    }
 }
 </script>
 
