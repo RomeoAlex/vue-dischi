@@ -1,6 +1,15 @@
 <template>
     <div class="album-wrapper">
         <Album />
+        <Album />
+        <Album />
+        <Album />
+        <Album />
+        <Album />
+        <Album />
+        <Album />
+        <Album />
+        <Album />
     </div>
 </template>
 <script>
@@ -28,9 +37,8 @@ export default {
 .album-wrapper{
     width:60%;
     margin:auto;
-
-    background-color: pink;
-    height:600px;
-      
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;    
 }
 </style>

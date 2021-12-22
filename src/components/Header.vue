@@ -2,6 +2,7 @@
     <header>
         <div class="logo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Spotify_icon.png" alt="">
+            
         </div>
     </header>
 </template>
@@ -11,6 +12,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+
+
 header{
     height: 100px;
     background-color: #2e3a46;
