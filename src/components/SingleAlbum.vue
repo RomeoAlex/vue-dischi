@@ -1,6 +1,6 @@
 <template>
     <div class="album-container">
-        <img :src="{details.poster}" :alt="details.title">
+        <img :src="details.poster" :alt="details.title">
         <div class="album-title">
                 {{details.title}}
             </div>
@@ -14,6 +14,7 @@
     
 </template>
 <script>
+
 export default {
     name:'SingleAlbum',
     props: {

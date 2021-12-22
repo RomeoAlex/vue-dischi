@@ -1,12 +1,12 @@
 <template>
     <div class="album-wrapper">
-        <Album v-for="album  in albums " :key="album" :details="album "/>
+        <SingleAlbum v-for="(album, index)  in albums " :key="index" :details="album"/>
         
     </div>
 </template>
 <script>
 import axios from 'axios';
-import Album from "./SingleAlbum";
+import SingleAlbum from "./SingleAlbum.vue";
 export default {
     name: 'DiskContainer',
     components: {
@@ -26,7 +26,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .album-wrapper{
-    width:60%;
+    width:70%;
     margin:auto;
     padding-top: 20px;
     display: flex;
