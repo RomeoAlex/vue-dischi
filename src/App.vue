@@ -2,6 +2,7 @@
   <div id="app">
     <Header />
     <DiskContainer />
+    
   </div>
 </template>
 
@@ -18,6 +19,7 @@ export default {
 
 <style lang="scss">
 @import url('./style/general.scss');
+
 #app {
   width:100%;
   margin: auto;
