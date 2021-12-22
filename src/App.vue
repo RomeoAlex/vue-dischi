@@ -9,10 +9,11 @@
 <script>
 import Header from "./components/Header.vue";
 import DiskContainer from "./components/DiskContainer.vue";
+
 export default {
   name: "App",
   components: {
-    Header, DiskContainer ,
+    Header, DiskContainer , 
   },
 };
 </script>

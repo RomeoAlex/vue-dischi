@@ -1,14 +1,16 @@
 <template>
     <div class="album-wrapper">
-        <div class="signle-album">
-
-        </div>
+        <Album />
     </div>
 </template>
 <script>
 import axios from 'axios';
+import Album from "./Album.vue";
 export default {
     name: 'DiskContainer',
+    components: {
+        Album
+        },
     data: function(){
         return {
             albums: [],
