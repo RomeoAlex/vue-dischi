@@ -1,16 +1,22 @@
 <template>
+    
     <div class="album-wrapper">
+        <div class="box">
+        <FilterGenre @genreFilter="filter" />
+    </div>
         <SingleAlbum v-for="(album, index)  in albums " :key="index" :details="album"/>
-        
     </div>
 </template>
 <script>
 import axios from 'axios';
+import FilterGenre from "./FilterGenre.vue";
 import SingleAlbum from "./SingleAlbum.vue";
+
 export default {
     name: 'DiskContainer',
     components: {
-        SingleAlbum
+        SingleAlbum, 
+        FilterGenre,
         },
     data: function(){
         return {
@@ -21,7 +27,15 @@ export default {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result) => {
         this.albums = result.data.response;
         });
-    }
+    },
+    methods:{
+        filter: function(){
+            // this.albums.genre.forEach(element => {
+            //     if(element.genre)
+            // });
+            alert('test');
+        },
+    },
 }
 </script>
 <style lang="scss" scoped>
