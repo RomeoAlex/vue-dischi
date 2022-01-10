@@ -1,10 +1,9 @@
 <template>
-    
-    <div class="album-wrapper">
-        <div class="box">
+    <div class="box">
         <FilterGenre @genreFilter="filter" />
-    </div>
+    <div class="album-wrapper">
         <SingleAlbum v-for="(album, index)  in albums " :key="index" :details="album"/>
+    </div>
     </div>
 </template>
 <script>
@@ -39,6 +38,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.box{
+    width: 100%;
+    margin: auto;
+}
 .album-wrapper{
     width:70%;
     margin:auto;
