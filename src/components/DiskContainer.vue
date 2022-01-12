@@ -1,8 +1,8 @@
 <template>
     <div class="box">
-        <FilterGenre @genreFilter="filter" />
+        <FilterGenre @genreFilter="filtered" />
     <div class="album-wrapper">
-        <SingleAlbum v-for="(album, index)  in albums " :key="index" :details="album"/>
+        <SingleAlbum v-for="(album, index)  in filtered " :key="index" :details="album"/>
     </div>
     </div>
 </template>
@@ -20,6 +20,8 @@ export default {
     data: function(){
         return {
             albums: [],
+            // creo una variabile che prendera il valore passato dal figlio
+            selectValue:'',
         };
     },
     created: function() {
@@ -28,13 +30,27 @@ export default {
         });
     },
     methods:{
-        filter: function(){
-            // this.albums.genre.forEach(element => {
-            //     if(element.genre)
-            // });
-            alert('test');
-        },
+        // utilizzo computed
+        // filter: function(){
+        //     // this.albums.genre.forEach(element => {
+        //     //     if(element.genre)
+        //     // });
+        //     alert('test');
+        // },
     },
+    computed:{
+        filtered: function(){
+            if(this.selectValue === ''){
+                return this.albums;
+            }else{
+            let filteredArray = [];
+            filteredArray = this.albums.filter((element) => {
+                return element.genre === this.selectValue;
+            });
+            return filteredArray;
+            }
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
